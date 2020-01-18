@@ -1,0 +1,22 @@
+sudo: required
+services: 
+    - docker
+
+before_install: 
+    - docker build -t jordanfrontdev/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run -e CI=true jordanfrontdev/react-test npm run test   
+
+after_success: 
+    - docker build -t jordanfrontdev/multi-client ./client
+    - docker build -t jordanfrontdev/multi-ngynx ./ngynx
+    - docker build -t jordanfrontdev/multi-server ./server
+    - docker build -t jordanfrontdev/multi-worker ./worker
+    # log in to docker CLI with travis environment variables
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # take those images and push them to docker hub
+    - docker push jordanfrontdev/multi-client
+    - docker push jordanfrontdev/multi-ngynx
+    - docker push jordanfrontdev/multi-server
+    - docker push jordanfrontdev/multi-worker

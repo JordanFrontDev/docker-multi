@@ -1,6 +1,6 @@
 import React from '../node_modules/@types/react';
 import logo from './logo.svg';
-import { BrowserRouter as Router, Route, Link } from '../node_modules/react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import OtherPage from './OtherPage';
 import Fib from './Fib';
 import './App.css';

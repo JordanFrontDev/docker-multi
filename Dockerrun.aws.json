@@ -1,0 +1,10 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "jordanfrontdev/multi-client",
+            "hostname": "client"
+        }
+    ]
+}

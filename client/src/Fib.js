@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from '../node_modules/@types/react';
-import axios from '../node_modules/axios';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 const Fib = () => {

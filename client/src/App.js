@@ -1,4 +1,4 @@
-import React from '../node_modules/@types/react';
+import React from 'react';
 import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import OtherPage from './OtherPage';
